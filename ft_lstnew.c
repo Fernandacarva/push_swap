@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:37:33 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/12 18:20:27 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/11/29 15:12:57 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/12/12 19:36:12 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "push_swap.h"
+#include <stdio.h>
 
-int	get_index(char **argv, int aux)
+t_list *ft_lstnew(int content_list, int index)
 {
-	int	j;
-	int	position;
+	t_list *new;
 
-	j = 1;
-	position = 0;
-	while (argv[j])
-	{
-		if (aux > atoi_long(argv[j]))
-			position++;
-		j++;
-	}
-	return (position);
+	new = malloc(sizeof(t_list));
+	new -> content = content_list;
+	new -> index = index;
+	new -> next = NULL;
+	return (new);
 }
 
+void	ft_lstaddback(t_list **stack, int content, int index)
+{
+	t_list	*aux;
 
+	aux = *stack;
+	while (aux->next != NULL)
+	{
+		aux = aux->next;
+	}
+	aux->next = ft_lstnew(content, index);
+}
 
