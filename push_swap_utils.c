@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:37:33 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/12 18:20:27 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:41:58 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,12 @@ int	get_index(char **argv, int aux)
 	return (position);
 }
 
+t_list	*list_last(t_list *list)
+{
+	t_list	*temp;
 
-
+	temp = list;
+	while (temp->next != NULL)
+		temp = temp->next;
+	return (temp);
+}

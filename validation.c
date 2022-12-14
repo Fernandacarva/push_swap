@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:13:14 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/12 16:53:58 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:48:15 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include <stdio.h>
 #include <string.h>
 
-int is_digite(int c)
+int	is_digite(int c)
 {
-    if ( c > '0' || c < '9')
-        return (1);
-    return (0);
+	if (c > '0' || c < '9')
+		return (1);
+	return (0);
 }
 
 int	repeat(char **argv)
@@ -33,7 +33,7 @@ int	repeat(char **argv)
 		while (argv[j])
 		{
 			if (!ft_strncmp(argv[i], argv[j], 10))
-					return (0);
+				return (0);
 			j++;
 		}
 		i++;
@@ -41,7 +41,7 @@ int	repeat(char **argv)
 	return (1);
 }
 
-long atoi_long(char *argv)
+long	atoi_long(char *argv)
 {
 	long	i;
 	long	aux;
@@ -56,7 +56,7 @@ long atoi_long(char *argv)
 		signal = -1;
 	if (argv[i] == '+' || argv[i] == '-')
 		i++;
-	while (is_digite(argv[i]) && argv[i] != 0) 
+	while (is_digite(argv[i]) && argv[i] != 0)
 	{
 		aux = aux * 10 + (argv[i] - '0');
 		i++;
@@ -70,3 +70,13 @@ long atoi_long(char *argv)
 	return (aux);
 }
 
+int	is_sorted(t_list **stack)
+{
+	while ((*stack)->next != NULL)
+	{
+		if ((*stack)->content > (*stack)->next->content)
+			return (0);
+		*stack = (*stack)->next;
+	}
+	return (1);
+}
