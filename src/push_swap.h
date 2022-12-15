@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:26:17 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/14 19:12:09 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:58:56 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include "./libft/libft.h"
-# include "./printf/ft_printf.h"
+# include "../libft/libft.h"
+# include "../printf/ft_printf.h"
 # include <stdio.h>
 
 # define INT_MAX 2147483647

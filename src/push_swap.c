@@ -6,17 +6,17 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/14 19:11:08 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:56:55 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack(t_list *teste)
+void	print_stack(t_list **a)
 {
 	t_list	*stack;
 
-	stack = teste;
+	stack = *a;
 	while (stack)
 	{
 		printf("index: %d | ", stack->index);
@@ -28,7 +28,7 @@ void	print_stack(t_list *teste)
 int	main(int argc, char **argv)
 {
 	int		i;
-	t_list	*teste;
+	t_list	*a;
 	//t_list	*aux;
 	int		receive;
 
@@ -46,8 +46,8 @@ int	main(int argc, char **argv)
 			ft_lstaddback(&teste, atoi_long(argv[i]), receive);
 		i++;
 	}
-	sort_three(&teste);
-	print_stack(teste);
+	sort_three(&a);
+	print_stack(&a);
 	ft_printf("stack b \n");
 	//ft_print_stack(aux);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:13:14 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/14 18:48:15 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/15 15:32:59 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,14 @@ long	atoi_long(char *argv)
 
 int	is_sorted(t_list **stack)
 {
-	while ((*stack)->next != NULL)
+	t_list	*temp;
+
+	temp = *stack;
+	while (temp->next != NULL)
 	{
-		if ((*stack)->content > (*stack)->next->content)
+		if (temp->content > temp->next->content)
 			return (0);
-		*stack = (*stack)->next;
+		temp = temp->next;
 	}
 	return (1);
 }
