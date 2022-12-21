@@ -6,14 +6,14 @@
 #    By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/13 15:45:18 by ferncarv          #+#    #+#              #
-#    Updated: 2022/12/15 15:37:45 by ferncarv         ###   ########.fr        #
+#    Updated: 2022/12/21 15:19:35 by ferncarv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 NAME		= push_swap 
-SRCS		= src/push_swap.c src/validation.c src/ft_lstnew.c src/push_swap_utils.c src/operator.c src/sort.c
+SRCS		= src/push_swap.c src/validation.c src/ft_lstnew.c src/push_swap_utils.c src/operator.c src/sort.c src/five.c src/size.c
 LIBFT		= ./libft/libft.a
 
 PRINTF		= ./printf/libftprintf.a

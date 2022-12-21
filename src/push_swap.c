@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/15 15:56:55 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:49:35 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,31 @@ int	main(int argc, char **argv)
 {
 	int		i;
 	t_list	*a;
-	//t_list	*aux;
+	t_list	*b;
 	int		receive;
+	//t_list	*aux;
 
 	i = 1;
+	b = 0;
 	if (argc < 2)
 		return (0);
-	if (!ft_isdigit(argv) || !repeat(argv))
+	if (!is_digite(*argv) || !repeat(argv))
 		write(1, "Error\n", 6);
 	while (i < argc)
 	{
 		receive = get_index(argv, atoi_long(argv[i]));
 		if (i == 1)
-			teste = ft_lstnew(atoi_long(argv[i]), receive);
+			a = ft_lstnew(atoi_long(argv[i]), receive);
 		else
-			ft_lstaddback(&teste, atoi_long(argv[i]), receive);
+			ft_lstaddback(&a, atoi_long(argv[i]), receive);
 		i++;
 	}
-	sort_three(&a);
-	print_stack(&a);
-	ft_printf("stack b \n");
+	if (argc == 4)
+		sort_three(&a);
+	else if (argc == 6)
+		sort_five(&a, &b);
+	//print_stack(&a);
+	//ft_printf("stack b \n");
 	//ft_print_stack(aux);
 	return (0);
 }

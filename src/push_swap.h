@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:26:17 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/15 15:58:56 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:49:57 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 typedef struct s_list{
 	int				content;
 	int				index;
+	//t_list			*b;
 	struct s_list	*next;
 }	t_list;
 
@@ -42,4 +43,8 @@ void	pb(t_list **stack, t_list **b);
 void	pa(t_list **stack, t_list **b);
 int		is_sorted(t_list **stack);
 void	sort_three(t_list **stack);
+void	sort_five(t_list **stack, t_list **b);
+void	is_big(t_list **a);
+int		size(t_list **a);
+int		is_digite(char *c);
 #endif

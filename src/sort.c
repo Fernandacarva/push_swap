@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:10:39 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/15 17:14:15 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/21 15:39:31 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,27 +41,4 @@ void	sort_three(t_list **stack)
 		rr(stack, 'a');
 }
 
-void	sort_five(t_list **stack, t_list **b)
-{
-	t_list	*temp;
-	int	i;
 
-	temp = *stack;
-	i = 0;
-	while (i < 2)
-	{
-		if ((temp)->index == 1 || (temp)->index == 0)
-		{
-			pb(stack, b);
-			i++;
-		}
-		else
-			rotate(stack, 'a');
-	}
-	sort_three(stack);
-	if (is_sorted(b)) 
-			rotate(b, 'b');
-	pb(b, stack);
-	pb(b, stack);
-
-}

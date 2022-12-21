@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   size.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 14:37:33 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/21 17:57:03 by ferncarv         ###   ########.fr       */
+/*   Created: 2022/12/21 15:13:18 by ferncarv          #+#    #+#             */
+/*   Updated: 2022/12/21 15:25:16 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_index(char **argv, int aux)
+int	size(t_list **a)
 {
-	int	j;
-	int	position;
+	int	size;
+	t_list *temp;
 
-	j = 1;
-	position = 0;
-	while (argv[j])
+	temp = *a;
+	size = 0;
+	while (*a != NULL)
 	{
-		if (aux > atoi_long(argv[j]))
-			position++;
-		j++;
+		size++;
+		*a = (*a)->next;
 	}
-	return (position);
-}
-
-t_list	*list_last(t_list *list)
-{
-	t_list	*temp;
-
-	temp = list;
-	while (temp->next != NULL)
-		temp = temp->next;
-	return (temp);
+	*a = temp;
+	return (size);
 }

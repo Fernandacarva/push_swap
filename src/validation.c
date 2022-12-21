@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:13:14 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/15 15:32:59 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/21 16:33:14 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int	is_digite(int c)
+int	is_digite(char *c)
 {
-	if (c > '0' || c < '9')
+	if (*c >= '0' || *c <= '9')
 		return (1);
 	return (0);
 }
@@ -56,7 +56,7 @@ long	atoi_long(char *argv)
 		signal = -1;
 	if (argv[i] == '+' || argv[i] == '-')
 		i++;
-	while (is_digite(argv[i]) && argv[i] != 0)
+	while (is_digite(&argv[i]) && argv[i] != 0)
 	{
 		aux = aux * 10 + (argv[i] - '0');
 		i++;
@@ -83,3 +83,4 @@ int	is_sorted(t_list **stack)
 	}
 	return (1);
 }
+
