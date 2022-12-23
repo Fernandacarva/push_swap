@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/23 00:56:20 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:04:19 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ int	main(int argc, char **argv)
 		i += make_stack(&a, argv, i);
 	if (argc == 4)
 		sort_three(&a);
+	if (argc == 3)
+		sort_two(&a);
 	else if (argc == 6)
 		sort_five(&a, &b);
+
 	else
 		is_big(&a);
 	exit (0);

@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:10:39 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/22 23:17:19 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:02:16 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,12 @@ void	sort_three(t_list **stack)
 	else if ((temp)->content < (temp)->next->content
 		&& (temp)->content > (temp)->next->next->content)
 		rr(stack, 'a');
+}
+
+void	sort_two(t_list **a)
+{
+	if (is_sorted(stack))
+		return ;
+	else
+		swap(stack, 'a');
 }

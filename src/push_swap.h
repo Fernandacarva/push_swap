@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:26:17 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/22 23:22:10 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:03:13 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ int		size(t_list **a);
 int		is_digite(char **argv);
 void	whow_index(t_list **a);
 void	print_stack(t_list **stack);
+void	sort_two(t_list **a);
 #endif
