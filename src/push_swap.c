@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/21 17:49:35 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 00:06:38 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,35 +25,40 @@ void	print_stack(t_list **a)
 	}
 }
 
+int	make_stack(t_list **a, char **argv, int i)
+{
+	int	receive;
+
+	receive = get_index(argv, atoi_long(argv[i]));
+	if (i == 1)
+		*a = ft_lstnew(atoi_long(argv[i]), receive);
+	else
+		ft_lstaddback(a, atoi_long(argv[i]), receive);
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
 	t_list	*a;
 	t_list	*b;
-	int		receive;
-	//t_list	*aux;
 
 	i = 1;
 	b = 0;
 	if (argc < 2)
 		return (0);
-	if (!is_digite(*argv) || !repeat(argv))
-		write(1, "Error\n", 6);
-	while (i < argc)
+	if (!is_digite(argv) || !repeat(argv))
 	{
-		receive = get_index(argv, atoi_long(argv[i]));
-		if (i == 1)
-			a = ft_lstnew(atoi_long(argv[i]), receive);
-		else
-			ft_lstaddback(&a, atoi_long(argv[i]), receive);
-		i++;
+		write(2, "Error\n", 6);
+		exit (0);
 	}
+	while (i < argc)
+		i += make_stack(&a, argv, i);
 	if (argc == 4)
 		sort_three(&a);
 	else if (argc == 6)
 		sort_five(&a, &b);
-	//print_stack(&a);
-	//ft_printf("stack b \n");
-	//ft_print_stack(aux);
+	else
+		is_big(&a);
 	return (0);
 }

@@ -6,19 +6,32 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:13:14 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/21 16:33:14 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/22 23:20:31 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <string.h>
 
-int	is_digite(char *c)
+int	is_digite(char **argv)
 {
-	if (*c >= '0' || *c <= '9')
-		return (1);
-	return (0);
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if ((j == 0) && (argv[i][j] == '-' || argv[i][j] == '+'))
+				j++;
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
 int	repeat(char **argv)
@@ -56,7 +69,7 @@ long	atoi_long(char *argv)
 		signal = -1;
 	if (argv[i] == '+' || argv[i] == '-')
 		i++;
-	while (is_digite(&argv[i]) && argv[i] != 0)
+	while (argv[i] >= '0' && argv[i] <= '9' && argv[i] != 0)
 	{
 		aux = aux * 10 + (argv[i] - '0');
 		i++;
@@ -83,4 +96,3 @@ int	is_sorted(t_list **stack)
 	}
 	return (1);
 }
-

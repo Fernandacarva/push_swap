@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 15:13:18 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/21 15:25:16 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/22 23:07:57 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	size(t_list **a)
 {
-	int	size;
-	t_list *temp;
+	int		size;
+	t_list	*temp;
 
 	temp = *a;
 	size = 0;
