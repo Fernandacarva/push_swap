@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/23 00:06:38 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 00:56:20 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ int	make_stack(t_list **a, char **argv, int i)
 	return (1);
 }
 
+void	the_finish(t_list *a)
+{
+	t_list	temp;
+
+	while (a)
+	{
+		temp = a;
+		a = a->next;
+		free(temp);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -46,7 +58,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	b = 0;
 	if (argc < 2)
-		return (0);
+		exit (0);
 	if (!is_digite(argv) || !repeat(argv))
 	{
 		write(2, "Error\n", 6);
@@ -60,5 +72,5 @@ int	main(int argc, char **argv)
 		sort_five(&a, &b);
 	else
 		is_big(&a);
-	return (0);
+	exit (0);
 }
