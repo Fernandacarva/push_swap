@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/23 01:04:19 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:06:42 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ int	main(int argc, char **argv)
 		sort_two(&a);
 	else if (argc == 6)
 		sort_five(&a, &b);
-
 	else
 		is_big(&a);
 	exit (0);
