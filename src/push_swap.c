@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 14:36:40 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/23 01:06:42 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:09:25 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	make_stack(t_list **a, char **argv, int i)
 
 void	the_finish(t_list *a)
 {
-	t_list	temp;
+	t_list	*temp;
 
 	while (a)
 	{

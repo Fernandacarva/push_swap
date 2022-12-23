@@ -6,7 +6,7 @@
 /*   By: ferncarv <ferncarv@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 17:10:39 by ferncarv          #+#    #+#             */
-/*   Updated: 2022/12/23 01:02:16 by ferncarv         ###   ########.fr       */
+/*   Updated: 2022/12/23 01:10:16 by ferncarv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	sort_three(t_list **stack)
 
 void	sort_two(t_list **a)
 {
-	if (is_sorted(stack))
+	if (is_sorted(a))
 		return ;
 	else
-		swap(stack, 'a');
+		swap(a, 'a');
 }
