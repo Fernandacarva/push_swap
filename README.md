@@ -1,5 +1,5 @@
 <h1 align="center">  
-	push_swap
+	Push_swap
   </h1>
   
 "Porque push_swap não é tão natural."
